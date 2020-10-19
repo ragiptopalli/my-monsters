@@ -15,14 +15,14 @@ class App extends Component {
     };
   }
 
-  handleChange(e) {
-    this.setState({ searchField: e.target.value})
-  }
-
   componentDidMount() {
     fetch('https://jsonplaceholder.typicode.com/users')
     .then(response => response.json())
     .then(users => this.setState( { monsters: users} ))
+  }
+
+  handleChange = (e) => {
+    this.setState({ searchField: e.target.value})
   }
 
   render() {
